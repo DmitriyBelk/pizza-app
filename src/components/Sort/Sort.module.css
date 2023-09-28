@@ -94,3 +94,32 @@
   font-weight: 700;
   background-color: #fff7f4;
 }
+
+@media (max-width: 1060px) {
+  .sort {
+    flex-direction: column;
+  }
+  .popup-text {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .sort-names {
+    gap: 10px;
+  }
+  .li {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 630px) {
+  .sort-names {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .li {
+    font-size: 14px;
+  }
+}

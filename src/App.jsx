@@ -17,8 +17,6 @@ function App() {
         {/* <Route path="/cart" element={<Cart/>}/> */}
         <Route path="*" element={<NotFount/>}/>
       </Routes>
-      {/* <Home/>
-      <NotFount/> */}
     </div>
   );
 }
