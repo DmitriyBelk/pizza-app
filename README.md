@@ -12,3 +12,6 @@
 - React Pagination (пагинация)
 - Lodash.Debounce
 - Code Splitting, React Loadable, useWhyDidYouUpdate
+
+
+https://pizza-app-ashen.vercel.app/ --- по данной ссылке можно ознакомиться с проектом
