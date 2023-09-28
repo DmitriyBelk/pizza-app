@@ -1,0 +1,103 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  gap: 10px;
+}
+
+.card-title {
+  color: #000;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 0.2px;
+}
+
+.property {
+  display: flex;
+  flex-direction: column;
+  background-color: #f3f3f3;
+  gap: 10px;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+
+.height {
+  display: flex; 
+  justify-content: center;
+}
+
+.width {
+  display: flex; 
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.property-text {
+  color: #2C2C2C;
+  padding: 5px 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.21px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.property-num {
+  color: #2C2C2C;
+  width: 100%;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.21px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.property-active {
+  background-color: #fff;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  color: #000;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.33px;
+}
+
+.btn {
+  border-radius: 30px;
+  border: 1px solid #EB5A1E;
+  background: #FFF;
+  width: 155px;
+  height: 40px;
+  color: #EB5A1E;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.btn:hover {
+  background: #EB5A1E;
+  color: #FFF;
+}

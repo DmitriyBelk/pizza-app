@@ -1,0 +1,37 @@
+.main {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  color: #181818;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: #000000;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 30px;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.btn:hover {
+  transform: scale(1.2);
+}

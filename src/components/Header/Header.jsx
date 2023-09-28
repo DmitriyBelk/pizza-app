@@ -1,0 +1,21 @@
+import styles from "./Header.module.css";
+
+const Header = () => {
+  return (
+    <div className={styles.header}>
+      <div className={styles["header-left"]}>
+        <img className="logo" src="/img/logo.svg" alt="" />
+        <h1 className={styles["logo-text"]}>React PIZZA</h1>
+      </div>
+      <div className={styles["header-right"]}>
+        <button className={styles.btn}>
+          <span>530 ₽</span>
+          <span>|</span>
+          <img src="/img/icon-cart.svg" alt="" />3
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Header;
