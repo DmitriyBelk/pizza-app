@@ -1,0 +1,258 @@
+.cartPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 900px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+.cart-header-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-header-left-text {
+  color: #000;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.32px;
+  margin-left: 10px;
+}
+
+.cart-header-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cart-header-right-text {
+  color: #B6B6B6;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 2px;
+}
+
+.cart-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-footer-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.cart-footer-total-text {
+  color: #000;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.22px;
+}
+
+.cart-footer-amount-span {
+  color: #000;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.22px;
+}
+
+.cart-footer-sum-span {
+  color: #FE5F1E;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.22px;
+}
+
+.cart-footer-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-out {
+  border-radius: 30px;
+  border: 1px solid #D3D3D3;
+  background: #FFF;
+  color: #CACACA;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 18px 18px;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.btn-pay {
+  border-radius: 30px;
+  border: none;
+  background: #FE5F1E;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 18px 18px;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.btn-pay:hover {
+  background: #c53811;
+}
+
+.btn-out:hover {
+  background: #000000;
+  color: #FFF;
+}
+
+@media (max-width: 800px) {
+  .cart-header-left-text {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-header-left-text {
+    font-size: 18px;
+  }
+  .cart-header-left-img {
+    width: 20px;
+  }
+  .cart-footer-total {
+    margin: 20px 0;
+  }
+  .cart-footer-total-text {
+    font-size: 16px;
+  }
+  .cart-footer-amount-span {
+    font-size: 18px;
+  }
+  .cart-footer-sum-span {
+    font-size: 18px;
+  }
+  .btn-out {
+    font-size: 12px;
+    padding: 13px 13px;
+  }
+  .btn-pay {
+    font-size: 12px;
+    padding: 13px 13px;
+  }
+}
+
+@media (max-width: 440px) {
+  .cart-footer-btn {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+  .cart-footer-total {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+  .cart-header-left-text {
+    font-size: 18px;
+  }
+  .cart-header-right-text {
+    font-size: 12px;
+  }
+}
+
+/* Дизайн пустой корзины */
+
+.cart-empty {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart-empty-title {
+  color: #000;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.32px;
+}
+
+.cart-empty-text {
+  color: #777;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 145.4%;
+  letter-spacing: 0.18px;
+}
+
+.cart-empty-img {
+  width: 300px;
+  height: 255px;
+}
+
+.cart-empty-btn {
+  color: #FFF;
+  background-color: #000;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.24px;
+  border-radius: 20px;
+  padding: 10px 20px;
+  transition: .3s;
+}
+
+.cart-empty-btn:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 500px) {
+  .cart-empty-title {
+    font-size: 24px;
+  }
+  
+  .cart-empty-text {
+    font-size: 14px;
+  }
+  
+  .cart-empty-img {
+    width: 250px;
+    height: 200px;
+  }
+}
+

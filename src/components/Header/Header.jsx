@@ -11,11 +11,14 @@ const Header = () => {
         </div>
       </Link>
       <div className={styles["header-right"]}>
-        <button className={styles.btn}>
-          <span>530 ₽</span>
-          <span>|</span>
-          <img src="/img/icon-cart.svg" alt="" />3
-        </button>
+        <Link to={"/cart"}>
+          <button className={styles.btn}>
+            <span>530 ₽</span>
+            <span>|</span>
+            <img src="/img/icon-cart.svg" alt="" />3
+          </button>
+        </Link>
+        
       </div>
     </div>
   );

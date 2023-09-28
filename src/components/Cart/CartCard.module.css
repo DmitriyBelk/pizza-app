@@ -1,0 +1,149 @@
+.cart-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-top: 2px solid #f4f4f4;
+  border-bottom: 2px solid #f4f4f4;
+  padding: 15px 0;
+  margin-bottom: -2px;
+}
+
+.cart-card-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.description-title {
+  color: #000;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.22px;
+}
+
+.description-property {
+  color: #8D8D8D;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.18px;
+}
+
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.count-symbol {
+  border: 3px solid #FE5F1E;
+  color: #FE5F1E;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  border-radius: 50%;
+  padding: 2px 7px;
+  cursor: pointer;
+}
+
+.count-num {
+  color: #000;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.22px;
+  margin: 0 10px;
+}
+
+.price {
+  color: #000;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.22px;
+}
+
+.btn-delete {
+  border: 3px solid #dddddd;
+  color: #dddddd;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  border-radius: 50%;
+  padding: 2px 7px;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .img {
+    width: 70px;
+    height: 70px;
+  }
+  .description-title {
+    font-size: 18px;
+  }
+  .description-property {
+    font-size: 14px;
+  }
+  .count-symbol {
+    border: 1px solid #FE5F1E;
+    font-size: 12px;
+  }
+  .count-num {
+    font-size: 16px;
+  }
+  .price {
+    font-size: 16px;
+  }
+  .btn-delete {
+    border: 2px solid #dddddd;
+    font-size: 12px;
+    padding: 2px 5px;
+  }
+}
+
+@media (max-width: 550px) {
+  .count {
+    display: none;
+  }
+}
+
+@media (max-width: 440px) {
+  .img {
+    width: 50px;
+    height: 50px;
+  }
+  .description-title {
+    font-size: 14px;
+  }
+  .description-property {
+    font-size: 12px;
+  }
+  .price {
+    font-size: 12px;
+  }
+  .btn-delete {
+    border: 1px solid #dddddd;
+    font-size: 8px;
+    padding: 2px 5px;
+  }
+}
