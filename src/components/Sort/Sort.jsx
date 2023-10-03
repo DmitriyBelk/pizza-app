@@ -2,9 +2,9 @@ import React from "react";
 import cn from "classnames";
 import styles from "./Sort.module.css";
 
-const Sort = () => {
+const Sort = ({ activeCategory, onClickCategory, sortType, onClickSort }) => {
   // Работаем со списком категорий
-  const [activeCategory, setActiveCategory] = React.useState(0);
+  // const [activeCategory, setActiveCategory] = React.useState(0);
   const categories = [
     "Все",
     "Мясные",
@@ -15,19 +15,23 @@ const Sort = () => {
   ];
   // Работаем с открывающимся списком сортировки
   const [open, setOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState(0);
-  const listPopup = ["популярности", "по цене", "по алфавиту"];
-  const onClickListItem = (i) => {
-    setSelected(i);
+  // const [selected, setSelected] = React.useState(0);
+  const listPopup = [
+    { name: "популярности", sort: "-rating" },
+    { name: "по цене", sort: "-price" },
+    { name: "по алфавиту", sort: "title" },
+  ];
+  const onClickListItem = (obj) => {
+    onClickSort(obj);
     setOpen(!open);
-  }
+  };
 
   return (
     <div className={styles.sort}>
       <ul className={styles["sort-names"]}>
         {categories.map((el, i) => (
           <li
-            onClick={() => setActiveCategory(i)}
+            onClick={() => onClickCategory(i)}
             key={i}
             className={cn(styles.li, {
               [styles["li-active"]]: activeCategory === i,
@@ -44,20 +48,20 @@ const Sort = () => {
             onClick={() => setOpen(!open)}
             className={styles["select-text"]}
           >
-            {listPopup[selected]}
+            {sortType.name}
           </span>
         </p>
         {open && (
           <ul className={styles["sort-block"]}>
-            {listPopup.map((el, i) => (
+            {listPopup.map((obj, i) => (
               <li
-                onClick={() => onClickListItem(i)}
+                onClick={() => onClickListItem(obj)}
                 key={i}
                 className={cn(styles["sort-block-text"], {
-                  [styles["sort-active"]]: selected === i,
+                  [styles["sort-active"]]: sortType.name === obj.name,
                 })}
               >
-                {el}
+                {obj.name}
               </li>
             ))}
           </ul>

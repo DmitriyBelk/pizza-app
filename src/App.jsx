@@ -9,7 +9,6 @@ import NotFount from "./pages/NotFount";
 
 function App() {
 
-
   return (
     <div className="container">
       <Header />
