@@ -2,9 +2,8 @@ import React from "react";
 import cn from "classnames";
 import styles from "./Sort.module.css";
 
-const Sort = ({ activeCategory, onClickCategory, sortType, onClickSort }) => {
+const Sort = ({ categoryId, onClickCategory, sortType, onClickSort }) => {
   // Работаем со списком категорий
-  // const [activeCategory, setActiveCategory] = React.useState(0);
   const categories = [
     "Все",
     "Мясные",
@@ -34,7 +33,7 @@ const Sort = ({ activeCategory, onClickCategory, sortType, onClickSort }) => {
             onClick={() => onClickCategory(i)}
             key={i}
             className={cn(styles.li, {
-              [styles["li-active"]]: activeCategory === i,
+              [styles["li-active"]]: categoryId === i,
             })}
           >
             {el}

@@ -11,7 +11,7 @@ const Header = () => {
           <h1 className={styles["logo-text"]}>React PIZZA</h1>
         </div>
       </Link>
-      <Search/>
+      <Search />
       <div className={styles["header-right"]}>
         <Link to={"/cart"}>
           <button className={styles.btn}>
@@ -20,7 +20,6 @@ const Header = () => {
             <img src="/img/icon-cart.svg" alt="" />3
           </button>
         </Link>
-        
       </div>
     </div>
   );
