@@ -3,6 +3,8 @@ import cn from "classnames";
 import styles from "./Sort.module.css";
 
 const Sort = ({ categoryId, onClickCategory, sortType, onClickSort }) => {
+
+
   // Работаем со списком категорий
   const categories = [
     "Все",
@@ -24,6 +26,7 @@ const Sort = ({ categoryId, onClickCategory, sortType, onClickSort }) => {
     onClickSort(obj);
     setOpen(!open);
   };
+
 
   return (
     <div className={styles.sort}>

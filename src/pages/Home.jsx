@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategoryId, setSort } from "../redux/slices/filterSlice";
 import { AppContext } from "../App";
@@ -33,16 +34,23 @@ const Home = () => {
   }
 
   React.useEffect(() => {
-    fetch(
-      `https://2580328108fa311f.mokky.dev/pizzas?${category}&sortBy=${sortType.sort}`
-    )
-      .then((res) => res.json())
-      .then((arr) => {
+    // fetch(
+    //   `https://2580328108fa311f.mokky.dev/pizzas?${category}&sortBy=${sortType.sort}`
+    // )
+    //   .then((res) => res.json())
+    //   .then((arr) => {
+    //     setTimeout(() => {
+    //       setItems(arr);
+    //       setIsLoading(!isLoading);
+    //     }, 500);
+    //   });
+    axios.get(`https://2580328108fa311f.mokky.dev/pizzas?${category}&sortBy=${sortType.sort}`)
+      .then(res => {
         setTimeout(() => {
-          setItems(arr);
+          setItems(res.data);
           setIsLoading(!isLoading);
         }, 500);
-      });
+      })
   }, [categoryId, sortType]);
 
   const category = categoryId > 0 ? `category=${categoryId}` : "";
