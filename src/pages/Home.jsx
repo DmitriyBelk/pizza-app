@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategoryId, setSort } from "../redux/slices/filterSlice";
 import { AppContext } from "../App";
@@ -7,51 +6,27 @@ import { AppContext } from "../App";
 import Sort from "../components/Sort/Sort";
 import CardPizza from "../components/Card-pizza/CardPizza";
 import CardSkeleton from "../components/Card-pizza/CardSkeleton";
+import { fetchPizzas } from "../redux/slices/pizzaSlice";
 
 const Home = () => {
   const dispatch = useDispatch();
   // Из стора берем номер категории
-  const categoryId = useSelector(state => state.filterSlice.categoryId);
+  const categoryId = useSelector((state) => state.filterSlice.categoryId);
   // Из стора берем сортировку
-  const sortType = useSelector(state => state.filterSlice.sort);
+  const sortType = useSelector((state) => state.filterSlice.sort);
 
-
+  const { items, status } = useSelector((state) => state.pizzaSlice);
 
   // Через контекст вытаскиваем значение инпута
   const { searchValue } = React.useContext(AppContext);
 
-  // Карточки товара
-  const [items, setItems] = React.useState([]);
-  // Прогрузился ли товар
-  const [isLoading, setIsLoading] = React.useState(true);
-
   const onClickCategory = (id) => {
     dispatch(setCategoryId(id));
-  }
+  };
 
   const onClickSortType = (obj) => {
     dispatch(setSort(obj));
-  }
-
-  React.useEffect(() => {
-    // fetch(
-    //   `https://2580328108fa311f.mokky.dev/pizzas?${category}&sortBy=${sortType.sort}`
-    // )
-    //   .then((res) => res.json())
-    //   .then((arr) => {
-    //     setTimeout(() => {
-    //       setItems(arr);
-    //       setIsLoading(!isLoading);
-    //     }, 500);
-    //   });
-    axios.get(`https://2580328108fa311f.mokky.dev/pizzas?${category}&sortBy=${sortType.sort}`)
-      .then(res => {
-        setTimeout(() => {
-          setItems(res.data);
-          setIsLoading(!isLoading);
-        }, 500);
-      })
-  }, [categoryId, sortType]);
+  };
 
   const category = categoryId > 0 ? `category=${categoryId}` : "";
 
@@ -63,6 +38,21 @@ const Home = () => {
     )
     .map((item, i) => <CardPizza key={i} {...item} />);
 
+  const getPizzas = async () => {
+    setTimeout(() => {
+      dispatch(
+        fetchPizzas({
+          category,
+          sortType: sortType.sort,
+        })
+      );
+    }, 500);
+  };
+
+  React.useEffect(() => {
+    getPizzas();
+  }, [categoryId, sortType]);
+
   return (
     <>
       <Sort
@@ -72,7 +62,7 @@ const Home = () => {
         onClickSort={onClickSortType}
       />
       <h1 className="text">Все пиццы</h1>
-      <div className="products">{isLoading ? skeleton : pizzas}</div>
+      <div className="products">{status === "loading" ? skeleton : pizzas}</div>
     </>
   );
 };
