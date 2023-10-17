@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./Header.module.css";
-import Search from "../Search/Search";
 
-const Header = () => {
+const Header: React.FC = () => {
+
   const { items, totalPrice } = useSelector((state) => state.cartSlice);
-  const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+  const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
+  
   return (
     <div className={styles.header}>
       <Link to={"/"}>
@@ -14,7 +15,6 @@ const Header = () => {
           <h1 className={styles["logo-text"]}>React PIZZA</h1>
         </div>
       </Link>
-      <Search />
       <div className={styles["header-right"]}>
         <Link to={"/cart"}>
           <button className={styles.btn}>

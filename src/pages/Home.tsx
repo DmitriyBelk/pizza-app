@@ -1,14 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategoryId, setSort } from "../redux/slices/filterSlice";
-import { AppContext } from "../App";
 
 import Sort from "../components/Sort/Sort";
 import CardPizza from "../components/Card-pizza/CardPizza";
 import CardSkeleton from "../components/Card-pizza/CardSkeleton";
 import { fetchPizzas } from "../redux/slices/pizzaSlice";
 
-const Home = () => {
+const Home: React.FC = () => {
   const dispatch = useDispatch();
   // Из стора берем номер категории
   const categoryId = useSelector((state) => state.filterSlice.categoryId);
@@ -17,14 +16,11 @@ const Home = () => {
 
   const { items, status } = useSelector((state) => state.pizzaSlice);
 
-  // Через контекст вытаскиваем значение инпута
-  const { searchValue } = React.useContext(AppContext);
-
-  const onClickCategory = (id) => {
+  const onClickCategory = (id: number) => {
     dispatch(setCategoryId(id));
   };
 
-  const onClickSortType = (obj) => {
+  const onClickSortType = (obj: { name: string; sort: string }) => {
     dispatch(setSort(obj));
   };
 
@@ -32,11 +28,7 @@ const Home = () => {
 
   const skeleton = [...new Array(6)].map((_, i) => <CardSkeleton key={i} />);
 
-  const pizzas = items
-    .filter((item) =>
-      item.name.toLowerCase().includes(searchValue.toLocaleLowerCase())
-    )
-    .map((item, i) => <CardPizza key={i} {...item} />);
+  const pizzas = items.map((item, i) => <CardPizza key={i} {...item} />);
 
   const getPizzas = async () => {
     setTimeout(() => {

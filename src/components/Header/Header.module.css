@@ -45,26 +45,27 @@
   background: #c53811;
 }
 
-@media (max-width: 900px) {
-  .header {
-    flex-direction: column;
-    gap: 15px;
-  }
-}
 
 @media (max-width: 630px) {
   .header {
     padding-bottom: 10px;
   }
   .logo-text {
-    font-size: 18px;
+    font-size: 22px;
     margin-left: 5px;
   }
   .btn {
-    font-size: 12px;
-    width: 110px;
-    height: 30px;
+    font-size: 16px;
+    width: 130px;
+    height: 40px;
     gap: 5px;
     border-radius: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
   }
 }

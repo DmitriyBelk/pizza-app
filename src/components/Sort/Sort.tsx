@@ -2,11 +2,23 @@ import React from "react";
 import cn from "classnames";
 import styles from "./Sort.module.css";
 
-const Sort = ({ categoryId, onClickCategory, sortType, onClickSort }) => {
+type sortProps = {
+  categoryId: number;
+  onClickCategory: (value: number) => void;
+  sortType: { name: string; sort: string };
+  onClickSort: (obj: { name: string; sort: string }) => void;
+};
 
+
+const Sort: React.FC<sortProps> = ({
+  categoryId,
+  onClickCategory,
+  sortType,
+  onClickSort,
+}) => {
 
   // Работаем со списком категорий
-  const categories = [
+  const categories: string[] = [
     "Все",
     "Мясные",
     "Вегетфрианские",
@@ -22,11 +34,10 @@ const Sort = ({ categoryId, onClickCategory, sortType, onClickSort }) => {
     { name: "по цене", sort: "-price" },
     { name: "по алфавиту", sort: "title" },
   ];
-  const onClickListItem = (obj) => {
+  const onClickListItem = (obj: { name: string; sort: string }) => {
     onClickSort(obj);
     setOpen(!open);
   };
-
 
   return (
     <div className={styles.sort}>
