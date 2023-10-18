@@ -1,3 +1,5 @@
+https://pizza-app-ashen.vercel.app/ --- по данной ссылке можно ознакомиться с проектом
+
 # 🛠 Технологии:
 
 - **ReactJS 18**
@@ -9,9 +11,6 @@
 - CSS-Modules / SaSS (стилизация)
 - Classnames (работа с классами)
 - React Content Loader (скелетон)
-- React Pagination (пагинация)
-- Lodash.Debounce
 - Code Splitting, React Loadable, useWhyDidYouUpdate
 
 
-https://pizza-app-ashen.vercel.app/ --- по данной ссылке можно ознакомиться с проектом

@@ -1,6 +1,7 @@
 import styles from "./CartCard.module.css";
 import { useDispatch } from "react-redux";
 import {
+  CartItem,
   addItem,
   minusCartItem,
   removeItem,
@@ -21,7 +22,7 @@ const CartCard: React.FC<CartCardProps> = ({ id, name, price, count, imageUrl, t
   const dispatch = useDispatch();
 
   const onClickPlus = () => {
-    dispatch(addItem({ id }));
+    dispatch(addItem({id} as CartItem));
   };
   const onClickMinus = () => {
     count > 1 && dispatch(minusCartItem(id));

@@ -6,15 +6,16 @@ import Sort from "../components/Sort/Sort";
 import CardPizza from "../components/Card-pizza/CardPizza";
 import CardSkeleton from "../components/Card-pizza/CardSkeleton";
 import { fetchPizzas } from "../redux/slices/pizzaSlice";
+import { RootState, useAppDispatch } from "../redux/store";
 
 const Home: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   // Из стора берем номер категории
-  const categoryId = useSelector((state) => state.filterSlice.categoryId);
+  const categoryId = useSelector((state: RootState) => state.filterSlice.categoryId);
   // Из стора берем сортировку
-  const sortType = useSelector((state) => state.filterSlice.sort);
+  const sortType = useSelector((state: RootState) => state.filterSlice.sort);
 
-  const { items, status } = useSelector((state) => state.pizzaSlice);
+  const { items, status } = useSelector((state: RootState) => state.pizzaSlice);
 
   const onClickCategory = (id: number) => {
     dispatch(setCategoryId(id));

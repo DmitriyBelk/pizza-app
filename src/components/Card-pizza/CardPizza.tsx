@@ -1,9 +1,10 @@
 import React from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { addItem } from "../../redux/slices/cartSlice";
+import { CartItem, CartSliceState, addItem } from "../../redux/slices/cartSlice";
 import styles from "./CardPizza.module.css";
 import cn from "classnames";
+import { RootState } from "../../redux/store";
 
 type CardPizzaProps = {
   id: number;
@@ -17,7 +18,7 @@ type CardPizzaProps = {
 const CardPizza: React.FC<CardPizzaProps> = ({ id, imageUrl, name, price, sizes, types }) => {
 
   const dispatch = useDispatch();
-  const cartItem = useSelector((state) =>
+  const cartItem = useSelector((state: RootState) =>
     state.cartSlice.items.find((obj) => obj.id === id)
   );
   const [activeType, setActiveType] = React.useState<number>(0);
@@ -27,13 +28,14 @@ const CardPizza: React.FC<CardPizzaProps> = ({ id, imageUrl, name, price, sizes,
   const addedCount = cartItem ? cartItem.count : 0;
 
   const onClickAdd = () => {
-    const item = {
+    const item: CartItem = {
       id,
       name,
       price,
       imageUrl,
       type: typeNames[activeType],
       size: sizes[activeSize],
+      count: 0,
     };
     dispatch(addItem(item));
   };

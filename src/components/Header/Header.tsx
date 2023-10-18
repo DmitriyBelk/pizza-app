@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./Header.module.css";
+import { RootState } from "../../redux/store";
 
 const Header: React.FC = () => {
+  const { items, totalPrice } = useSelector(
+    (state: RootState) => state.cartSlice
+  );
+  const totalCount = items.reduce(
+    (sum: number, item: any) => sum + item.count,
+    0
+  );
 
-  const { items, totalPrice } = useSelector((state) => state.cartSlice);
-  const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
-  
   return (
     <div className={styles.header}>
       <Link to={"/"}>
